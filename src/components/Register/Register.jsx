@@ -8,9 +8,21 @@ const Register = () => {
             <form>
                 <div className="form-control">
                     <label className="label">
+                        <span className="label-text">Name</span>
+                    </label>
+                    <input type="text" name='name' placeholder="Name" className="input input-bordered" />
+                </div>
+                <div className="form-control">
+                    <label className="label">
                         <span className="label-text">Email</span>
                     </label>
                     <input type="text" name='email' placeholder="email" className="input input-bordered" />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Photo URL</span>
+                    </label>
+                    <input type="text" name='photo' placeholder="Photo URL" className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">

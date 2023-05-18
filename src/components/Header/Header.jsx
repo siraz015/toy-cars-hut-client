@@ -1,13 +1,25 @@
-import React from 'react';
+
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
 
     const navItems = <>
         <li> <Link to='/'>Home</Link> </li>
         <li> <Link to='/login'>All Toys</Link> </li>
-        <li> <Link to='/login'>My Toys</Link> </li>
-        <li> <Link to='/login'>Add A Toy</Link> </li>
+        {user?.email ? <>
+            <li> <Link to='/login'>My Toys</Link> </li>
+            <li> <Link to='/login'>Add A Toy</Link> </li>
+        </> : <></>}
         <li> <Link to='/blog'>Blogs</Link> </li>
     </>
 
@@ -35,10 +47,15 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to='/login'>Login</Link>
-                    <div className="w-10 rounded-full">
-                        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                    </div>
+                    {user?.email ?
+                        <div className='flex gap-4'>
+                            <div className="w-10 rounded-full">
+                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
+                            <button onClick={handleLogOut}>Log Out</button>
+                        </div>
+                        : <Link to='/login'>Login</Link>
+                    }
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Register = () => {
     return (
         <div className='w-1/3 mx-auto bg-gray-100 p-5 rounded-lg mt-10 shadow-lg'>
-            {/* <h1 className="text-5xl text-center font-bold my-5">Please Register!</h1>
+            <h1 className="text-5xl text-center font-bold my-5">Please Register!</h1>
             <form>
                 <div className="form-control">
                     <label className="label">
@@ -22,7 +22,7 @@ const Register = () => {
                     <input className="btn btn-primary" type="submit" value="Login" />
                 </div>
             </form>
-            <p className='my-4'><small>Already have an account? <Link to='/login'>Please Login!</Link></small></p> */}
+            <p className='my-4'><small>Already have an account? <Link to='/login'>Please Login!</Link></small></p>
         </div>
     );
 };

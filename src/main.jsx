@@ -15,6 +15,7 @@ import AuthProvider from './providers/AuthProvider.jsx';
 import AddAToy from './components/AddAToy/AddAToy.jsx';
 import AllToys from './components/AllToys/AllToys.jsx';
 import ToyDetails from './components/ToyDetails/ToyDetails.jsx';
+import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/addatoy',
-        element: <AddAToy></AddAToy>
+        element: <PrivateRoute><AddAToy></AddAToy></PrivateRoute>
       },
       {
         path: '/alltoys',
@@ -47,8 +48,9 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/alltoys')
       },
       {
-        path: '/toydetails',
-        element: <ToyDetails></ToyDetails>
+        path: '/toydetails/:id',
+        element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/alltoys/${params.id}`)
       }
     ]
   }

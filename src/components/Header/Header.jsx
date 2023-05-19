@@ -15,7 +15,7 @@ const Header = () => {
 
     const navItems = <>
         <li> <Link to='/'>Home</Link> </li>
-        <li> <Link to='/login'>All Toys</Link> </li>
+        <li> <Link to='/alltoys'>All Toys</Link> </li>
         {user?.email ? <>
             <li> <Link to='/login'>My Toys</Link> </li>
             <li> <Link to='/addatoy'>Add A Toy</Link> </li>

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddAToy = () => {
     const { user } = useContext(AuthContext);
@@ -29,7 +30,7 @@ const AddAToy = () => {
         }
 
         fetch('http://localhost:5000/addtoy', {
-            method:'POST',
+            method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
@@ -38,6 +39,15 @@ const AddAToy = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Add Toy Successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
             })
     }
 

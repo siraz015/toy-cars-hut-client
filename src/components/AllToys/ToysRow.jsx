@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ToysRow = ({ toys }) => {
-    const {_id, name, sellerName, availableQuantity, subCategory, price, rating } = toys;
+    const { _id, name, sellerName, availableQuantity, subCategory, price, rating } = toys;
 
     return (
 
@@ -11,8 +12,9 @@ const ToysRow = ({ toys }) => {
             <td>{subCategory}</td>
             <td>{price}</td>
             <td>{availableQuantity}</td>
-            <button className="btn bg-amber-700 border-none">View Details</button>
-            
+            <Link to='/toydetails'>
+                <button className="btn bg-amber-700 border-none">View Details</button>
+            </Link>
         </tr>
 
     );

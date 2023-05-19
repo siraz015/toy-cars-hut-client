@@ -14,6 +14,7 @@ import Blogs from './components/Blogs/blogs.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
 import AddAToy from './components/AddAToy/AddAToy.jsx';
 import AllToys from './components/AllToys/AllToys.jsx';
+import ToyDetails from './components/ToyDetails/ToyDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
         path: '/alltoys',
         element: <AllToys></AllToys>,
         loader: () => fetch('http://localhost:5000/alltoys')
+      },
+      {
+        path: '/toydetails',
+        element: <ToyDetails></ToyDetails>
       }
     ]
   }

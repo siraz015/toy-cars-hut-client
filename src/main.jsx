@@ -12,6 +12,7 @@ import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
 import Blogs from './components/Blogs/blogs.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
+import AddAToy from './components/AddAToy/AddAToy.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blogs></Blogs>
+      },
+      {
+        path: '/addatoy',
+        element: <AddAToy></AddAToy>
       }
     ]
   }

@@ -18,7 +18,7 @@ const Header = () => {
         <li> <Link to='/login'>All Toys</Link> </li>
         {user?.email ? <>
             <li> <Link to='/login'>My Toys</Link> </li>
-            <li> <Link to='/login'>Add A Toy</Link> </li>
+            <li> <Link to='/addatoy'>Add A Toy</Link> </li>
         </> : <></>}
         <li> <Link to='/blog'>Blogs</Link> </li>
     </>

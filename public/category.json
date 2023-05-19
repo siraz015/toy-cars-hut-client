@@ -1,0 +1,32 @@
+[
+  {
+    "sports_Car": [
+      {
+        "picture": "https://example.com/sportscar1.jpg",
+        "name": "Sports Car 1",
+        "price": "$19.99",
+        "rating": 4.5
+      },
+      "Police_Car": {
+        "picture": "https://example.com/sportscar2.jpg",
+        "name": "Sports Car 2",
+        "price": "$24.99",
+        "rating": 4.8
+      }
+    ],
+    "truck": [
+      {
+        "picture": "https://example.com/trackcar1.jpg",
+        "name": "Track Car 1",
+        "price": "$14.99",
+        "rating": 4.2
+      },
+      {
+        "picture": "https://example.com/trackcar2.jpg",
+        "name": "Track Car 2",
+        "price": "$17.99",
+        "rating": 4.6
+      }
+    ]
+  }
+]

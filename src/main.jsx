@@ -1,6 +1,4 @@
-import React, { useContext } from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -11,12 +9,14 @@ import Home from './components/Home/Home.jsx';
 import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
 import Blogs from './components/Blogs/blogs.jsx';
-import AuthProvider, { AuthContext } from './providers/AuthProvider.jsx';
 import AddAToy from './components/AddAToy/AddAToy.jsx';
 import AllToys from './components/AllToys/AllToys.jsx';
 import ToyDetails from './components/ToyDetails/ToyDetails.jsx';
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
 import MyToys from './components/MyToys/MyToys.jsx';
+import React from 'react';
+import AuthProvider from './providers/AuthProvider';
+import UpdateToy from './components/UpdateToy/UpdateToy';
 
 
 const router = createBrowserRouter([
@@ -57,6 +57,11 @@ const router = createBrowserRouter([
       {
         path: '/mytoys',
         element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
+      },
+      {
+        path: '/updateToy/:id',
+        element: <UpdateToy></UpdateToy>,
+        loader: ({ params }) => fetch(`http://localhost:5000/mytoys/${params.id}`)
       }
     ]
   }

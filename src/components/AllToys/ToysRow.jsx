@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 
 const ToysRow = ({ toys }) => {
-    const { _id, name, sellerName, availableQuantity, subCategory, price, rating } = toys;
+    const { _id, name, sellerName, availableQuantity, subCategory, price} = toys;
 
     return (
         <tr>

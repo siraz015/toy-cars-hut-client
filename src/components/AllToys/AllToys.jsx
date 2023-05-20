@@ -4,8 +4,6 @@ import ToysRow from './ToysRow';
 const AllToys = () => {
     const alltoys = useLoaderData();
 
-    console.log(alltoys);
-
     return (
         <div className='max-w-[1280px] mx-auto'>
             <div className="overflow-x-auto">

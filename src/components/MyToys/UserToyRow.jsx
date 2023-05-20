@@ -1,4 +1,4 @@
-import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const UserToyRow = ({ userToys, handleDelete, handleUpdate }) => {
@@ -31,7 +31,7 @@ const UserToyRow = ({ userToys, handleDelete, handleUpdate }) => {
                 <h3 className="text-center">{rating}</h3>
             </td>
             <td>
-                <button onClick={() => handleUpdate(_id)} className="btn btn-primary">Update</button>
+                <Link to={`/updateToy/${_id}`}><button className="btn btn-primary">Update</button></Link>
             </td>
             <td>
                 <button onClick={() => handleDelete(_id)} className="btn btn-warning">Delete</button>

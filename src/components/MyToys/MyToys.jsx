@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import UserToyRow from './UserToyRow';
+import Swal from 'sweetalert2';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
@@ -14,7 +15,50 @@ const MyToys = () => {
             .then(data => setMytoys(data))
     }, [])
 
-    console.log(mytoys);
+
+    const handleDelete = id => {
+        const proceed = confirm('are you sure want to delete');
+
+        if (proceed) {
+            fetch(`http://localhost:5000/mytoys/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Deleted Successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                    const remaining = mytoys.filter(toy => toy._id !== id);
+                    setMytoys(remaining)
+                })
+        }
+    }
+
+
+    const handleUpdate = id => {
+        fetch(`http://localhost:5000/mytoys/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify()
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.modifiedCount > 0) {
+                    // update
+                }
+            })
+    }
+
 
     return (
         <div className='max-w-[1280px] mx-auto'>
@@ -40,6 +84,8 @@ const MyToys = () => {
                             mytoys?.map(userToys => <UserToyRow
                                 key={userToys._id}
                                 userToys={userToys}
+                                handleDelete={handleDelete}
+                                handleUpdate={handleUpdate}
                             ></UserToyRow>)
                         }
 

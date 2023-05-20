@@ -1,21 +1,8 @@
+import Swal from "sweetalert2";
 
 
-const UserToyRow = ({ userToys }) => {
+const UserToyRow = ({ userToys, handleDelete, handleUpdate }) => {
     const { _id, name, pictureURL, sellerName, availableQuantity, subCategory, price, rating } = userToys;
-
-
-    const handleDelete = id => {
-        const proceed = confirm('are you sure want to delete');
-
-        if (proceed) {
-            fetch(``)
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                })
-        }
-    }
-
 
     return (
 
@@ -44,7 +31,7 @@ const UserToyRow = ({ userToys }) => {
                 <h3 className="text-center">{rating}</h3>
             </td>
             <td>
-                <button className="btn btn-primary">Update</button>
+                <button onClick={() => handleUpdate(_id)} className="btn btn-primary">Update</button>
             </td>
             <td>
                 <button onClick={() => handleDelete(_id)} className="btn btn-warning">Delete</button>

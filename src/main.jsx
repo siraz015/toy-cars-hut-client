@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
@@ -11,11 +11,13 @@ import Home from './components/Home/Home.jsx';
 import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
 import Blogs from './components/Blogs/blogs.jsx';
-import AuthProvider from './providers/AuthProvider.jsx';
+import AuthProvider, { AuthContext } from './providers/AuthProvider.jsx';
 import AddAToy from './components/AddAToy/AddAToy.jsx';
 import AllToys from './components/AllToys/AllToys.jsx';
 import ToyDetails from './components/ToyDetails/ToyDetails.jsx';
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
+import MyToys from './components/MyToys/MyToys.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -50,7 +52,11 @@ const router = createBrowserRouter([
       {
         path: '/toydetails/:id',
         element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/alltoys/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/alltoys/${params.id}`)
+      },
+      {
+        path: '/mytoys',
+        element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
       }
     ]
   }

@@ -23,8 +23,6 @@ const Header = () => {
         <li> <Link to='/blog'>Blogs</Link> </li>
     </>
 
-    console.log(user);
-
     return (
         <div className='bg-base-100 shadow-lg'>
             <div className="navbar max-w-[1280px] mx-auto">

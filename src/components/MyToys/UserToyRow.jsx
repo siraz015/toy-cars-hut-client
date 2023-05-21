@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-const UserToyRow = ({ userToys, handleDelete, handleUpdate }) => {
+const UserToyRow = ({ userToys, handleDelete }) => {
     const { _id, name, pictureURL, sellerName, availableQuantity, subCategory, price, rating } = userToys;
 
     return (

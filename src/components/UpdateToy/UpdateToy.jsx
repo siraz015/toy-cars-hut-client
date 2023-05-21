@@ -35,7 +35,7 @@ const UpdateToy = () => {
             detailDescription
         }
 
-        fetch(`http://localhost:5000/mytoys/${_id}`, {
+        fetch(`https://toy-cars-hut-server.vercel.app/mytoys/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -15,7 +15,7 @@ const TabC = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/toy")
+        fetch("https://toy-cars-hut-server.vercel.app/toy")
             .then((res) => res.json())
             .then((result) => {
                 setTab(result);

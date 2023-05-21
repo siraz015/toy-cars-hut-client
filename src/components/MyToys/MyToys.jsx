@@ -9,7 +9,7 @@ const MyToys = () => {
     const [mytoys, setMytoys] = useState();
     useTitle('My Toys')
 
-    const url = `http://localhost:5000/mytoys?sellerEmail=${user.email}`
+    const url = `https://toy-cars-hut-server.vercel.app/mytoys?sellerEmail=${user.email}`
 
     useEffect(() => {
         fetch(url)
@@ -22,7 +22,7 @@ const MyToys = () => {
         const proceed = confirm('are you sure want to delete');
 
         if (proceed) {
-            fetch(`http://localhost:5000/mytoys/${id}`, {
+            fetch(`https://toy-cars-hut-server.vercel.app/mytoys/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -45,7 +45,7 @@ const MyToys = () => {
 
 
     const handleUpdate = id => {
-        fetch(`http://localhost:5000/mytoys/${id}`, {
+        fetch(`https://toy-cars-hut-server.vercel.app/mytoys/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -1,6 +1,7 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import useTitle from '../../Hooks/useTitle';
 
 const CustomerReview = () => {
 

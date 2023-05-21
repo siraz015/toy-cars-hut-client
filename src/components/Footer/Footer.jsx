@@ -1,5 +1,7 @@
+import useTitle from "../../Hooks/useTitle";
 
 const Footer = () => {
+
     return (
         <div className='bg-base-300 mt-10'>
             <footer className="footer p-10 text-base-content max-w-[1280px] mx-auto">

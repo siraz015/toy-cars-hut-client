@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 const Error = () => {
+
+    useTitle('Error')
+
     return (
         <div>
             <div className='flex justify-center'>

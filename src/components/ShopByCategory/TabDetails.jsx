@@ -1,8 +1,10 @@
 
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 const TabDetails = () => {
     const tabToy = useLoaderData();
+    useTitle('Toy Details')
 
     const { availableQuantity, detailDescription, name, pictureURL, price, rating, subCategory } = tabToy;
 

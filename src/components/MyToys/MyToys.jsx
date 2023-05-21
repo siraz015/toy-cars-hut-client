@@ -2,10 +2,12 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import UserToyRow from './UserToyRow';
 import Swal from 'sweetalert2';
+import useTitle from '../../Hooks/useTitle';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [mytoys, setMytoys] = useState();
+    useTitle('My Toys')
 
     const url = `http://localhost:5000/mytoys?sellerEmail=${user.email}`
 

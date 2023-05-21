@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const ToyDetails = () => {
     const toy = useLoaderData();
-    const { _id, availableQuantity, detailDescription, name, pictureURL, price, rating, sellerName, subCategory } = toy;
+    const { availableQuantity, detailDescription, name, pictureURL, price, rating, subCategory } = toy;
 
 
     return (
@@ -12,7 +12,7 @@ const ToyDetails = () => {
                 <h2 className='text-center font-bold text-5xl mb-5 text-blue-800'> {name} Details </h2>
                 <div className='grid md:grid-cols-2 gap-10'>
                     <div className=' shadow-xl rounded-xl'>
-                        <img className='max-w-md' src={pictureURL} alt="" />
+                        <img className='max-w-md w-[350px] mx-auto' src={pictureURL} alt="" />
                     </div>
                     <div className='flex flex-col justify-center shadow-xl rounded-xl p-10'>
                         <h2 className='text-4xl font-bold mb-3'>Toy Name: {name}</h2>

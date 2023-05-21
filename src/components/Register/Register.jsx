@@ -3,10 +3,12 @@ import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitle from '../../Hooks/useTitle';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
     const navigate = useNavigate();
+    useTitle('Register')
 
     const handleRegister = event => {
         event.preventDefault();

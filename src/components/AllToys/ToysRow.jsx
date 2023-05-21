@@ -1,5 +1,6 @@
 
 import { Link } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 const ToysRow = ({ toys }) => {
     const { _id, name, sellerName, availableQuantity, subCategory, price} = toys;

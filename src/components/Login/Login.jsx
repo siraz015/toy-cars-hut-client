@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
-    const { loginUser } = useContext(AuthContext);
+    const { loginUser, googleLogin } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -27,6 +27,11 @@ const Login = () => {
             console.log(error);
         })
     }
+
+    const handleGoogleLogIn = () => {
+        googleLogin();
+    }
+
 
     return (
         <div className='w-1/3 mx-auto bg-gray-100 p-5 rounded-lg mt-10 shadow-lg'>
@@ -52,6 +57,9 @@ const Login = () => {
                 </div>
             </form>
             <p className='my-4'><small>Don`t have account? <Link to='/register'>Please Register!</Link></small></p>
+            <div className='btn btn-secondary w-full'>
+                <button onClick={handleGoogleLogIn}>Login with Google</button>
+            </div>
         </div>
     );
 };

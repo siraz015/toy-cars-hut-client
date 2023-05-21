@@ -56,7 +56,6 @@ const UpdateToy = () => {
     }
 
 
-
     return (
         <div className='my-16 max-w-[1280px] mx-auto'>
             <h2 className='text-3xl font-bold text-center mb-5'>Update Toy: {name}</h2>

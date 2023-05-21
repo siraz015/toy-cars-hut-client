@@ -23,6 +23,8 @@ const Header = () => {
         <li> <Link to='/blog'>Blogs</Link> </li>
     </>
 
+    console.log(user);
+
     return (
         <div className='bg-base-100 shadow-lg'>
             <div className="navbar max-w-[1280px] mx-auto">
@@ -47,11 +49,12 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                        <img className='rounded-full w-12 mr-4' src={user?.photoURL} />
+                    </div>
+
                     {user?.email ?
                         <div className='flex gap-4'>
-                            <div className="w-10 rounded-full">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                            </div>
                             <button onClick={handleLogOut}>Log Out</button>
                         </div>
                         : <Link to='/login'>Login</Link>

@@ -18,6 +18,7 @@ import React from 'react';
 import AuthProvider from './providers/AuthProvider';
 import UpdateToy from './components/UpdateToy/UpdateToy';
 import Error from './components/Error/Error';
+import TabDetails from './components/ShopByCategory/TabDetails';
 
 
 const router = createBrowserRouter([
@@ -63,6 +64,12 @@ const router = createBrowserRouter([
         path: '/updateToy/:id',
         element: <UpdateToy></UpdateToy>,
         loader: ({ params }) => fetch(`http://localhost:5000/mytoys/${params.id}`)
+      },
+      {
+        path: '/toy/:id',
+        element: <TabDetails></TabDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`)
+
       }
     ]
   },

@@ -53,8 +53,8 @@ const SignleTab = ({ ta }) => {
                         Rating: {rating}
                         {/* <Rating style={{ maxWidth: 100 }} value={rating} readOnly /> */}
                     </p>
-                    <Link to={`/tabDetails/${_id}`}>
-                        <button onClick={handleDetails} className="btn">Details</button>
+                    <Link to={`/toy/${_id}`}>
+                        <button onClick={handleDetails} className="btn my-4">Details</button>
                     </Link>
                 </div>
             </div>

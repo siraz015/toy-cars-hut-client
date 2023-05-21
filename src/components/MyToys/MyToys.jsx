@@ -28,9 +28,9 @@ const MyToys = () => {
                     console.log(data);
                     if (data.deletedCount > 0) {
                         Swal.fire({
-                            position: 'top-end',
+                            // position: 'top-center',
                             icon: 'success',
-                            title: 'Deleted Successfully',
+                            title: 'Deleted Toy Successfully',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -53,8 +53,14 @@ const MyToys = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if(data.modifiedCount > 0) {
-                    // update
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        // position: 'top-end',
+                        icon: 'success',
+                        title: 'Updated Toy Successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                 }
             })
     }

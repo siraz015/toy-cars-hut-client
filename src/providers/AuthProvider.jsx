@@ -25,15 +25,7 @@ const AuthProvider = ({ children }) => {
 
     const googleLogin = () => {
         setLoading(true);
-        signInWithPopup(auth, provider)
-            .then(result => {
-                const googleLoggedUser = result.user;
-                setUser(googleLoggedUser)
-                console.log(googleLoggedUser);
-            })
-            .catch(error => {
-                console.log(error);
-            })
+        return signInWithPopup(auth, provider)
     }
 
     const logOut = () => {
@@ -54,6 +46,7 @@ const AuthProvider = ({ children }) => {
 
     const authInfo = {
         user,
+        setUser,
         loading,
         createUser,
         loginUser,

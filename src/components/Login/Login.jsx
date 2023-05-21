@@ -2,9 +2,10 @@
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
-    const { loginUser, googleLogin } = useContext(AuthContext);
+    const { loginUser, googleLogin, setUser } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -18,18 +19,40 @@ const Login = () => {
         const password = form.password.value;
 
         loginUser(email, password)
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-            navigate(from, { replace: true })
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                setUser(loggedUser);
+                navigate(from, { replace: true });
+                Swal.fire({
+                    // position: 'top-center',
+                    icon: 'success',
+                    title: 'User Login Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     const handleGoogleLogIn = () => {
-        googleLogin();
+        googleLogin()
+            .then(result => {
+                const googleLoggedUser = result.user;
+                setUser(googleLoggedUser);
+                navigate(from, { replace: true });
+                Swal.fire({
+                    // position: 'top-center',
+                    icon: 'success',
+                    title: 'User Login Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
 

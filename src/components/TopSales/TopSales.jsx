@@ -2,7 +2,9 @@ import React from 'react';
 
 const TopSales = () => {
     return (
-        <div className='max-w-[1280px] mx-auto'>
+        <div className='max-w-[1280px] mx-auto my-20'>
+            <h2 className='text-5xl font-bold text-center'>Our Top Sales Product</h2>
+            <p className='py-5 text-center text-xl'>Driving Imagination: Unleashing the Fun and Adventure of Toy Car Sales!</p>
             <div className='grid md:grid-cols-3'>
                 <div className="card w-96 bg-base-100 shadow-xl" data-aos="fade-left">
                     <figure><img className='w-[250px]' src={'https://i.ibb.co/TM3Ywyy/S1.jpg'} alt="Shoes" /></figure>

@@ -1,7 +1,6 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import useTitle from '../../Hooks/useTitle';
 
 const CustomerReview = () => {
 
@@ -14,7 +13,7 @@ const CustomerReview = () => {
         <div className='my-20'>
             <h2 className='text-center font-bold text-5xl text-orange-700 mb-4'>Our Customer Review</h2>
             <hr className='w-1/2 mx-auto py-3 to-black' />
-            <div className='grid md: grid-cols-3'>
+            <div className='grid md:grid-cols-3'>
                 <div className="card w-96 bg-base-100 shadow-xl" data-aos="fade-down">
                     <figure><img className='w-[250px]' src={'https://i.ibb.co/JcDM3d3/1.png'} alt="Customer Image" /></figure>
                     <div className="card-body">

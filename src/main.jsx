@@ -17,6 +17,7 @@ import MyToys from './components/MyToys/MyToys.jsx';
 import React from 'react';
 import AuthProvider from './providers/AuthProvider';
 import UpdateToy from './components/UpdateToy/UpdateToy';
+import Error from './components/Error/Error';
 
 
 const router = createBrowserRouter([
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:5000/mytoys/${params.id}`)
       }
     ]
+  },
+  {
+    path: '*',
+    element: <Error></Error>
   }
 ])
 

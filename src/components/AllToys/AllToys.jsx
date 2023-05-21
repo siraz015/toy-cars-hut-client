@@ -1,11 +1,35 @@
-import { useLoaderData } from 'react-router-dom';
 import ToysRow from './ToysRow';
+import { useEffect, useState } from 'react';
 
 const AllToys = () => {
-    const alltoys = useLoaderData();
+
+    const [allToy, setAllToy] = useState([]);
+    const [searchText, setSearchText] = useState("");
+
+
+    useEffect(() => {
+        fetch('http://localhost:5000/alltoys')
+            .then(res => res.json())
+            .then(data => setAllToy(data))
+    }, [])
+
+
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/toySearchName/${searchText}`)
+            .then(res => res.json())
+            .then(data => {
+                setAllToy(data);
+            })
+    }
 
     return (
         <div className='max-w-[1280px] mx-auto'>
+            <div>
+                <div className="flex justify-end items-center mb-5">
+                    <input placeholder="Search Toy" className="border border-orange-700 py-2 px-3 rounded-lg mr-3" onChange={(e) => setSearchText(e.target.value)} type="text" />{""}
+                    <button className='btn bg-orange-700 border-none' onClick={handleSearch}>Search</button>
+                </div>
+            </div>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* head */}
@@ -21,7 +45,7 @@ const AllToys = () => {
                     </thead>
                     <tbody>
                         {
-                            alltoys.map(toys => <ToysRow
+                            allToy.map(toys => <ToysRow
                                 key={toys._id}
                                 toys={toys}
                             ></ToysRow>)

@@ -16,7 +16,6 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const SignleTab = ({ ta }) => {
 
-    console.log(ta);
     // const { _id, name, pictureURL, sellerName, availableQuantity, subCategory, price, rating } = ta;
     const { rating, price, pictureURL, name, _id } = ta || {}
 

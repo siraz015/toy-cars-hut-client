@@ -1,10 +1,10 @@
-import React from 'react';
+
 import { useLoaderData } from 'react-router-dom';
 
 const TabDetails = () => {
     const tabToy = useLoaderData();
 
-    const { _id, availableQuantity, detailDescription, name, pictureURL, price, rating, sellerName, subCategory } = tabToy;
+    const { availableQuantity, detailDescription, name, pictureURL, price, rating, subCategory } = tabToy;
 
 
     return (
